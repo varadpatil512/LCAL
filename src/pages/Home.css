@@ -1,0 +1,211 @@
+/* Home.css — Short gateway homepage */
+
+/* ── Hero ── */
+.hero {
+  background: var(--bg-deep);
+  padding: 80px 0 72px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 899px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .hero__visual { order: -1; }
+}
+
+/* ── Hero content ── */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: clamp(36px, 6vw, 60px);
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  font-family: 'Inter', sans-serif;
+  max-width: 480px;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ── Chessboard visual ── */
+.hero__visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__chessboard-wrap {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.hero__chessboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  aspect-ratio: 1;
+  border: 2px solid var(--border-strong);
+  box-shadow: 0 0 40px rgba(201, 164, 76, 0.1);
+}
+
+.chess-square {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chess-square--light { background: var(--cream); opacity: 0.9; }
+.chess-square--dark  { background: #1a160f; }
+
+.chess-square__piece {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.chess-square--dark .chess-square__piece  { color: var(--gold); }
+.chess-square--light .chess-square__piece { color: #1a160f; }
+
+/* ── Stats strip ── */
+.stats-strip {
+  background: var(--band);
+  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.stats-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+@media (max-width: 599px) {
+  .stats-strip__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.stats-strip__item {
+  text-align: center;
+  padding: 16px 24px;
+  position: relative;
+}
+
+.stats-strip__item + .stats-strip__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--border-strong);
+}
+
+@media (max-width: 599px) {
+  .stats-strip__item:nth-child(2)::before { display: block; }
+  .stats-strip__item:nth-child(3)::before { display: none; }
+}
+
+.stats-strip__number {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: var(--gold);
+  font-weight: 400;
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stats-strip__label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Home sections shared ── */
+.home-section {
+  padding: 72px 0;
+}
+
+.home-section--band {
+  background: var(--band);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-section--chess {
+  background-color: var(--bg-deep);
+  background-image: repeating-conic-gradient(#18140d 0% 25%, #0e0c09 0% 50%);
+  background-size: 28px 28px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.home-section__cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Latest results list */
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Video grid */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Champions grid */
+.champions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+/* Blog grid */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}

@@ -1,0 +1,222 @@
+/* ===================== HERO ===================== */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 102px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.hero__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(201, 162, 39, 0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 20% 60%, rgba(201, 162, 39, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Badge */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+/* Title */
+.hero__title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #f5f0e8;
+  letter-spacing: 0.02em;
+}
+
+/* Subtitle */
+.hero__subtitle {
+  font-size: 1rem;
+  color: #a09070;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+/* Actions */
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+/* Stats */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 28px;
+  background: rgba(201, 162, 39, 0.05);
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__stat-value {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #c9a227;
+  line-height: 1;
+}
+
+.hero__stat-plus {
+  font-size: 1rem;
+}
+
+.hero__stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7a55;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(201, 162, 39, 0.2);
+}
+
+/* ===================== CHESS BOARD VISUAL ===================== */
+.hero__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__chessboard-wrap {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.hero__chessboard-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-radius: 4px;
+}
+
+.hero__chessboard-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -24px;
+  border: 1px solid rgba(201, 162, 39, 0.08);
+  border-radius: 4px;
+}
+
+.hero__chessboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid rgba(201, 162, 39, 0.4);
+  box-shadow:
+    0 0 40px rgba(201, 162, 39, 0.15),
+    0 0 80px rgba(201, 162, 39, 0.05),
+    inset 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.chess-square--light {
+  background: #2a1f00;
+}
+
+.chess-square--dark {
+  background: #0d0900;
+}
+
+/* Chess pieces floating */
+.hero__piece {
+  position: absolute;
+  font-size: 2.2rem;
+  color: #c9a227;
+  filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.6));
+  pointer-events: none;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero__piece--king {
+  top: 10%;
+  left: 12%;
+  animation-delay: 0s;
+  font-size: 2.6rem;
+}
+.hero__piece--queen {
+  top: 10%;
+  right: 12%;
+  animation-delay: 0.8s;
+  font-size: 2.4rem;
+}
+.hero__piece--pawn {
+  bottom: 12%;
+  left: 30%;
+  animation-delay: 1.5s;
+  font-size: 1.8rem;
+}
+.hero__piece--bishop {
+  bottom: 12%;
+  right: 20%;
+  animation-delay: 2.2s;
+  font-size: 2rem;
+}
+
+@media (max-width: 900px) {
+  .hero__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .hero__badge { margin: 0 auto 20px; }
+  .hero__subtitle { margin: 0 auto 28px; }
+  .hero__actions { justify-content: center; }
+  .hero__stats { margin: 0 auto; }
+  .hero__visual { order: -1; }
+  .hero__chessboard-wrap { width: 200px; height: 200px; }
+}

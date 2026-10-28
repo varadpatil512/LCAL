@@ -1,0 +1,34 @@
+/* Videos.css */
+.videos-streams-strip {
+  background: var(--band);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.videos-streams-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.videos-streams-inner h2 {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.videos-streams-inner p {
+  font-size: 0.87rem;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  margin-top: 4px;
+}
+
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}

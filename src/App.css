@@ -1,0 +1,7 @@
+/* App.css — minimal root styles (layout handled by Layout.jsx) */
+
+/* Remove old padding-top — navbar is now sticky, not fixed */
+#app-root,
+.app {
+  min-height: 100dvh;
+}

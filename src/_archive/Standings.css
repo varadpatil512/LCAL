@@ -1,0 +1,141 @@
+/* ===================== STANDINGS ===================== */
+.standings {
+  background: rgba(13, 9, 0, 0.4);
+}
+
+.standings__table-wrap {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 39, 0.12);
+}
+
+.standings__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.standings__table thead tr {
+  background: rgba(201, 162, 39, 0.08);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.standings__table th {
+  padding: 14px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c9a227;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.standings__row {
+  border-bottom: 1px solid rgba(201, 162, 39, 0.06);
+  transition: background 0.2s ease;
+}
+
+.standings__row:hover {
+  background: rgba(201, 162, 39, 0.04);
+}
+
+.standings__row--gold {
+  background: rgba(201, 162, 39, 0.06);
+  border-left: 2px solid #c9a227;
+}
+.standings__row--silver {
+  background: rgba(180, 180, 190, 0.03);
+  border-left: 2px solid rgba(180, 180, 190, 0.4);
+}
+.standings__row--bronze {
+  background: rgba(180, 100, 50, 0.03);
+  border-left: 2px solid rgba(180, 100, 50, 0.4);
+}
+
+.standings__table td {
+  padding: 14px 16px;
+  text-align: center;
+  color: #8a7a55;
+  vertical-align: middle;
+}
+
+.standings__rank {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #c9a227 !important;
+  font-weight: 700;
+}
+
+.standings__player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.standings__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.2), rgba(201, 162, 39, 0.05));
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #c9a227;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.standings__name {
+  font-weight: 600;
+  color: #d4c9a8;
+  white-space: nowrap;
+}
+
+.standings__rating {
+  font-family: 'Cinzel', serif;
+  color: #c9a227 !important;
+  font-size: 0.8rem;
+}
+
+.standings__wins { color: #4caf50 !important; font-weight: 700; }
+.standings__draws { color: #c9a227 !important; font-weight: 700; }
+.standings__losses { color: #f44336 !important; font-weight: 700; }
+
+.standings__points {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #c9a227 !important;
+}
+
+.standings__form {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.standings__form-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .standings__form { display: none; }
+  .standings__table th:nth-child(3),
+  .standings__table td:nth-child(3) { display: none; }
+}

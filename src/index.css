@@ -1,0 +1,421 @@
+/* ========================================
+   LCAL – League of Chess Association
+   Global CSS Design System
+   Chess-themed dark gold aesthetic
+   ======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===================== DESIGN TOKENS ===================== */
+:root {
+  /* ── Spec tokens (primary) ── */
+  --bg:           #14110d;
+  --bg-deep:      #0e0c09;
+  --band:         #1a160f;
+  --card:         #1d1913;
+  --border:       #2e2819;
+  --border-strong:#3a3322;
+  --gold:         #c9a44c;
+  --gold-hover:   #d8b862;
+  --cream:        #f1ece0;
+  --muted:        #a39d8f;
+
+  /* ── Legacy aliases (kept so old components don't break) ── */
+  --gold-primary:   #c9a44c;
+  --gold-light:     #d8b862;
+  --gold-dark:      #9a7a1a;
+  --gold-faint:     rgba(201, 164, 76, 0.12);
+  --gold-glow:      rgba(201, 164, 76, 0.25);
+  --gold-border:    rgba(201, 164, 76, 0.30);
+
+  --bg-darkest:   #0e0c09;
+  --bg-dark:      #14110d;
+  --bg-medium:    #1a160f;
+  --bg-card:      #1d1913;
+  --bg-card-hover:#23200e;
+  --bg-elevated:  #2a2000;
+
+  --text-white:   #f1ece0;
+  --text-light:   #d4c9a8;
+  --text-muted:   #a39d8f;
+  --text-gold:    #c9a44c;
+
+  /* ── Shadows ── */
+  --shadow-gold:  0 0 20px rgba(201, 164, 76, 0.15);
+  --shadow-card:  0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-glow:  0 0 40px rgba(201, 164, 76, 0.2);
+
+  /* ── Spacing ── */
+  --section-padding: 80px 0;
+  --container-max:   1200px;
+  --container-pad-mobile: 16px;
+  --container-pad-tablet: 24px;
+  --container-pad-desktop: 32px;
+
+  /* ── Transitions ── */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast:   all 0.15s ease;
+
+  /* ── Border radius (square-corner spec) ── */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+}
+
+/* ===================== BASE ===================== */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', 'Raleway', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===================== TYPOGRAPHY ===================== */
+h1, h2, h3, h4, h5 {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.font-inter    { font-family: 'Inter', sans-serif; }
+.font-cinzel   { font-family: 'Cinzel', serif; }
+.font-newsreader { font-family: 'Newsreader', serif; }
+.font-raleway  { font-family: 'Raleway', sans-serif; }
+
+/* Eyebrow labels */
+.eyebrow {
+  font-family: 'Inter', 'Raleway', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track  { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb  { background: var(--gold-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ===================== LAYOUT ===================== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad-mobile);
+}
+
+@media (min-width: 480px) {
+  .container { padding: 0 var(--container-pad-tablet); }
+}
+@media (min-width: 1024px) {
+  .container { padding: 0 var(--container-pad-desktop); }
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* Alternate bands */
+.section--bg   { background: var(--bg); }
+.section--band { background: var(--band); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* Chessboard pattern band */
+.section--chess {
+  background-color: var(--bg-deep);
+  background-image: repeating-conic-gradient(
+    #18140d 0% 25%,
+    #0e0c09 0% 50%
+  );
+  background-size: 32px 32px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===================== BUTTONS ===================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-family: 'Inter', 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+/* Primary – solid gold */
+.btn-primary {
+  background: var(--gold);
+  color: #0e0c09;
+}
+.btn-primary:hover {
+  background: var(--gold-hover);
+}
+
+/* Secondary – dark with thin border */
+.btn-secondary {
+  background: var(--card);
+  color: var(--cream);
+  border: 1px solid var(--border-strong);
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Outline – gold border + gold text */
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+.btn-outline:hover {
+  background: var(--gold-faint);
+}
+
+/* Legacy aliases */
+.btn-gold    { background: var(--gold); color: #0e0c09; }
+.btn-gold:hover { background: var(--gold-hover); }
+
+/* Sizes */
+.btn-sm { padding: 8px 16px; font-size: 0.75rem; min-height: 36px; }
+.btn-lg { padding: 14px 32px; font-size: 0.9rem; }
+
+/* Focus visible (accessibility) */
+.btn:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+/* ===================== SECTION HEADERS ===================== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.section-title {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: clamp(26px, 4vw, 34px);
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+}
+
+.section-title span {
+  color: var(--gold);
+}
+
+.section-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+/* ===================== DECORATIONS ===================== */
+.gold-line {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+.gold-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ===================== CHESS PIECE ICON ===================== */
+.chess-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 2rem;
+  filter: drop-shadow(0 0 8px rgba(201, 164, 76, 0.4));
+  transition: var(--transition-smooth);
+}
+
+.chess-icon:hover {
+  filter: drop-shadow(0 0 16px rgba(201, 164, 76, 0.7));
+  transform: scale(1.1);
+}
+
+/* ===================== BADGE ===================== */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
+
+.badge-gold {
+  background: var(--gold-faint);
+  border: 1px solid var(--gold-border);
+  color: var(--gold);
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===================== GRID UTILS ===================== */
+.grid-auto-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.grid-auto-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.grid-auto-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Explicit grids */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+@media (max-width: 1023px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 767px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .section { padding: 56px 0; }
+  .section-title { font-size: clamp(22px, 6vw, 28px); }
+}
+
+/* ===================== GLOW / GRADIENT TEXT ===================== */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===================== SELECTION ===================== */
+::selection {
+  background: rgba(201, 164, 76, 0.3);
+  color: var(--cream);
+}
+
+/* ===================== PAGE HEADER BAND ===================== */
+.page-header {
+  background: var(--band);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 0 40px;
+}
+
+.page-header__breadcrumb {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.page-header__breadcrumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.page-header__breadcrumb a:hover { color: var(--gold); }
+.page-header__breadcrumb span { color: var(--gold); }
+
+.page-header__title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 12px;
+}
+
+.page-header__desc {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 560px;
+  font-family: 'Inter', sans-serif;
+}

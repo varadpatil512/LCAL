@@ -1,0 +1,83 @@
+/* Static.css — Shared styles for Constitution and Legal pages */
+
+.static-page {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .static-page {
+    grid-template-columns: 1fr;
+  }
+  .static-page__toc { display: none; }
+}
+
+/* ── TOC ── */
+.static-page__toc {
+  position: sticky;
+  top: 80px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.static-page__toc-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+}
+
+.static-page__toc ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.static-page__toc a {
+  font-size: 0.82rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.15s;
+}
+.static-page__toc a:hover { color: var(--gold); }
+
+/* ── Content ── */
+.static-page__content {
+  max-width: 720px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.static-page__content h2 {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: var(--cream);
+  margin: 40px 0 12px;
+  font-weight: 400;
+  scroll-margin-top: 80px;
+}
+
+.static-page__content h2:first-child { margin-top: 0; }
+
+.static-page__content p {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.static-page__content ul {
+  margin: 0 0 16px 20px;
+  color: var(--muted);
+}
+
+.static-page__content li {
+  margin-bottom: 8px;
+}

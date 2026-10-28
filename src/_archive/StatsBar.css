@@ -1,0 +1,63 @@
+/* ===================== STATS BAR ===================== */
+.statsbar {
+  padding: 40px 0;
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+  background: linear-gradient(90deg,
+    rgba(201, 162, 39, 0.04),
+    rgba(201, 162, 39, 0.08),
+    rgba(201, 162, 39, 0.04)
+  );
+}
+
+.statsbar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.statsbar__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 24px;
+  position: relative;
+}
+
+.statsbar__item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(201, 162, 39, 0.2);
+}
+
+.statsbar__value {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #c9a227;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(201, 162, 39, 0.3);
+}
+
+.statsbar__suffix {
+  font-size: 1.4rem;
+  color: #e0b84a;
+}
+
+.statsbar__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6a5a35;
+}
+
+@media (max-width: 768px) {
+  .statsbar__grid { grid-template-columns: repeat(2, 1fr); }
+  .statsbar__item:nth-child(2)::after { display: none; }
+}

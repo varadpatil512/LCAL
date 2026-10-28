@@ -1,0 +1,58 @@
+/* Leaderboard.css */
+
+.lb-season-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.lb-season-filter label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+}
+
+.lb-season-filter select {
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  color: var(--cream);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  min-height: 40px;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23a39d8f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+.lb-season-filter select:focus {
+  outline: 2px solid var(--gold);
+}
+
+.lb-full-standings-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px;
+}
+
+.lb-data-source-note {
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+}
+.lb-data-source-note a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.lb-data-source-note a:hover { text-decoration: underline; }

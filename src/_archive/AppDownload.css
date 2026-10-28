@@ -1,0 +1,184 @@
+/* ===================== APP DOWNLOAD ===================== */
+.appdownload {
+  position: relative;
+  overflow: hidden;
+}
+
+.appdownload::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201, 162, 39, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.appdownload__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+
+.appdownload__title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #f5f0e8;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.appdownload__title span {
+  color: #c9a227;
+}
+
+.appdownload__desc {
+  font-size: 0.9rem;
+  color: #8a7a55;
+  line-height: 1.7;
+  max-width: 440px;
+  margin-bottom: 20px;
+}
+
+.appdownload__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.appdownload__features li {
+  font-size: 0.82rem;
+  color: #a09070;
+  font-weight: 500;
+}
+
+/* Store Buttons */
+.appdownload__buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.appdownload__store-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(201, 162, 39, 0.08);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.appdownload__store-btn:hover {
+  background: rgba(201, 162, 39, 0.15);
+  border-color: rgba(201, 162, 39, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 162, 39, 0.15);
+}
+
+.appdownload__store-icon {
+  font-size: 1.4rem;
+  color: #c9a227;
+}
+
+.appdownload__store-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.appdownload__store-text span {
+  font-size: 0.65rem;
+  color: #6a5a35;
+  letter-spacing: 0.05em;
+}
+
+.appdownload__store-text strong {
+  font-size: 0.9rem;
+  color: #d4c9a8;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+/* Phone Mockup */
+.appdownload__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appdownload__phone {
+  position: relative;
+  width: 140px;
+  height: 240px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.appdownload__phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #1a1100, #0d0900);
+  border-radius: 16px;
+  border: 2px solid rgba(201, 162, 39, 0.3);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.appdownload__phone-header {
+  height: 24px;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appdownload__phone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding-top: 8px;
+}
+
+.appdownload__phone-piece {
+  font-size: 3rem;
+  color: #c9a227;
+  filter: drop-shadow(0 0 12px rgba(201, 162, 39, 0.5));
+  animation: float 3s ease-in-out infinite;
+}
+
+.appdownload__phone-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(201, 162, 39, 0.15);
+  border-radius: 3px;
+}
+
+.appdownload__phone-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse at center, rgba(201, 162, 39, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .appdownload__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .appdownload__desc { margin: 0 auto 20px; }
+  .appdownload__buttons { justify-content: center; }
+  .appdownload__visual { order: -1; }
+  .appdownload__features { align-items: center; }
+}

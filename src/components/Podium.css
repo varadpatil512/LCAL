@@ -1,0 +1,98 @@
+/* Podium.css — Top-3 podium for Leaderboard page */
+
+.podium {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.podium__place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 160px;
+  max-width: 240px;
+}
+
+/* 1st place: larger */
+.podium__place--1st { order: 2; }
+.podium__place--2nd { order: 1; }
+.podium__place--3rd { order: 3; }
+
+.podium__card {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid var(--border-strong);
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: box-shadow 0.2s;
+}
+
+.podium__place--1st .podium__card {
+  border-color: var(--gold);
+  box-shadow: 0 0 32px rgba(201, 164, 76, 0.2);
+}
+
+.podium__piece {
+  font-size: 2.5rem;
+  color: var(--gold);
+  filter: drop-shadow(0 0 8px rgba(201, 164, 76, 0.4));
+  line-height: 1;
+}
+
+.podium__place--1st .podium__piece { font-size: 3rem; }
+
+.podium__name {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: 1rem;
+  color: var(--cream);
+  font-weight: 400;
+}
+
+.podium__place--1st .podium__name { font-size: 1.15rem; }
+
+.podium__points {
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-family: 'Newsreader', 'Cinzel', serif;
+}
+
+.podium__points-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Platform bar below card */
+.podium__bar {
+  width: 100%;
+  background: var(--band);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.podium__place--1st .podium__bar { height: 64px; color: var(--gold); font-size: 1.5rem; }
+.podium__place--2nd .podium__bar { height: 48px; font-size: 1.2rem; }
+.podium__place--3rd .podium__bar { height: 36px; }
+
+@media (max-width: 599px) {
+  .podium { flex-direction: column; align-items: center; }
+  .podium__place { order: unset !important; max-width: 100%; }
+  .podium__place--1st { order: -1 !important; }
+}

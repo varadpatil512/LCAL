@@ -1,0 +1,5 @@
+/* SectionHeader.css */
+.section-header__left {
+  /* stacks eyebrow above title */
+}
+.eyebrow + .section-title { margin-top: 8px; }

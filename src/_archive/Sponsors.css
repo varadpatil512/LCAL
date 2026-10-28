@@ -1,0 +1,87 @@
+/* ===================== SPONSORS ===================== */
+.sponsors {
+  border-top: 1px solid rgba(201, 162, 39, 0.1);
+}
+
+.sponsors__header {
+  margin-bottom: 40px;
+}
+
+.sponsors__tier {
+  margin-bottom: 36px;
+}
+
+.sponsors__tier-label {
+  margin-bottom: 16px;
+}
+
+.sponsors__tier-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+}
+
+.tier-gold {
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.2), rgba(201, 162, 39, 0.08));
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  color: #c9a227;
+}
+
+.tier-silver {
+  background: rgba(180, 180, 190, 0.08);
+  border: 1px solid rgba(180, 180, 190, 0.2);
+  color: #b0b0c0;
+}
+
+.tier-bronze {
+  background: rgba(180, 100, 50, 0.08);
+  border: 1px solid rgba(180, 100, 50, 0.2);
+  color: #c87040;
+}
+
+.sponsors__logos {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sponsors__logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 32px;
+  min-width: 140px;
+  cursor: pointer;
+}
+
+.sponsors__logo-icon {
+  font-size: 2rem;
+  color: rgba(201, 162, 39, 0.4);
+  transition: all 0.3s ease;
+}
+
+.sponsors__logo-card:hover .sponsors__logo-icon {
+  color: #c9a227;
+  filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.5));
+}
+
+.sponsors__logo-name {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #6a5a35;
+  letter-spacing: 0.05em;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.sponsors__logo-card:hover .sponsors__logo-name {
+  color: #c9a227;
+}

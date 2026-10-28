@@ -1,0 +1,113 @@
+/* ===================== SEASON GLIMPSE ===================== */
+.glimpse {
+  background: rgba(26, 17, 0, 0.6);
+  border-top: 1px solid rgba(201, 162, 39, 0.1);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.1);
+}
+
+.glimpse__header {
+  margin-bottom: 40px;
+}
+
+.glimpse__pieces {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.glimpse__piece {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 12px;
+  background: rgba(201, 162, 39, 0.04);
+  border: 1px solid rgba(201, 162, 39, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.glimpse__piece:hover {
+  background: rgba(201, 162, 39, 0.1);
+  border-color: rgba(201, 162, 39, 0.3);
+  transform: translateY(-4px);
+}
+
+.glimpse__piece-icon {
+  font-size: 2.8rem;
+  color: #c9a227;
+  filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.4));
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+.glimpse__piece:hover .glimpse__piece-icon {
+  filter: drop-shadow(0 0 20px rgba(201, 162, 39, 0.7));
+  transform: scale(1.15);
+}
+
+.glimpse__piece-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a5a35;
+}
+
+/* Gallery Banner */
+.glimpse__gallery-banner {
+  background: linear-gradient(135deg,
+    rgba(201, 162, 39, 0.08),
+    rgba(201, 162, 39, 0.03)
+  );
+  border: 1px solid rgba(201, 162, 39, 0.15);
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.glimpse__gallery-banner::before {
+  content: '♔';
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 8rem;
+  color: rgba(201, 162, 39, 0.06);
+  line-height: 1;
+}
+
+.glimpse__gallery-text {
+  max-width: 480px;
+  position: relative;
+  z-index: 1;
+}
+
+.glimpse__gallery-text h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c9a227;
+  margin-bottom: 12px;
+}
+
+.glimpse__gallery-text p {
+  font-size: 0.85rem;
+  color: #8a7a55;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .glimpse__pieces { grid-template-columns: repeat(3, 1fr); }
+  .glimpse__gallery-banner { padding: 24px; }
+  .glimpse__gallery-banner::before { display: none; }
+}
+@media (max-width: 480px) {
+  .glimpse__pieces { grid-template-columns: repeat(2, 1fr); }
+}

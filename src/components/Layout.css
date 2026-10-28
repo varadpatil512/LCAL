@@ -1,0 +1,12 @@
+/* Layout.css */
+.layout {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-deep);
+}
+
+#main-content {
+  flex: 1;
+  outline: none; /* skip-link target */
+}

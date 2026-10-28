@@ -1,0 +1,50 @@
+/* Pagination.css */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.pagination__btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination__btn:hover {
+  color: var(--cream);
+  border-color: var(--border-strong);
+}
+
+.pagination__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pagination__btn.active {
+  background: var(--gold);
+  color: #0e0c09;
+  border-color: var(--gold);
+  font-weight: 600;
+}
+
+.pagination__ellipsis {
+  color: var(--muted);
+  padding: 0 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+}

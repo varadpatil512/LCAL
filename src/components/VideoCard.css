@@ -1,0 +1,102 @@
+/* VideoCard.css */
+
+.video-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-3px);
+}
+
+/* Thumbnail */
+.video-card__thumb {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--bg-deep), var(--bg));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-card__piece {
+  font-size: 3.5rem;
+  color: var(--gold);
+  filter: drop-shadow(0 0 12px rgba(201, 164, 76, 0.4));
+  transition: transform 0.3s ease;
+  user-select: none;
+}
+
+.video-card:hover .video-card__piece {
+  transform: scale(1.1);
+}
+
+.video-card__duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(14, 12, 9, 0.85);
+  color: var(--cream);
+  font-size: 11px;
+  font-family: 'Inter', sans-serif;
+  padding: 2px 6px;
+  letter-spacing: 0.04em;
+}
+
+.video-card__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: rgba(14, 12, 9, 0.4);
+}
+
+.video-card:hover .video-card__play { opacity: 1; }
+
+.video-card__play-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #0e0c09;
+  padding-left: 4px; /* optically center the triangle */
+}
+
+/* Info */
+.video-card__info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.video-card__title {
+  font-family: 'Newsreader', 'Cinzel', serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--cream);
+  line-height: 1.4;
+}
+
+.video-card__views {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  margin-top: auto;
+}
