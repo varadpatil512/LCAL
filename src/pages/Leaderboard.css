@@ -1,5 +1,8 @@
 /* Leaderboard.css */
 
+/* The .container class in index.css already handles 16px/24px/32px padding.
+   These styles handle only leaderboard-specific layout. */
+
 .lb-season-filter {
   display: flex;
   align-items: center;
@@ -45,14 +48,9 @@
   margin-bottom: 16px;
 }
 
-.lb-data-source-note {
-  margin-top: 24px;
-  font-size: 0.8rem;
-  color: var(--muted);
-  font-family: 'Inter', sans-serif;
+/* Mobile adjustments */
+@media (max-width: 639px) {
+  .lb-season-filter {
+    margin-bottom: 24px;
+  }
 }
-.lb-data-source-note a {
-  color: var(--gold);
-  text-decoration: none;
-}
-.lb-data-source-note a:hover { text-decoration: underline; }

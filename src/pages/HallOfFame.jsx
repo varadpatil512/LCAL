@@ -7,7 +7,7 @@ import ChampionCard from '../components/ChampionCard';
 import { champions } from '../data/champions';
 
 const HallOfFame = () => {
-  useEffect(() => { document.title = 'Hall of Fame — LCAL'; }, []);
+  useEffect(() => { document.title = 'Hall of Fame | LCAL'; }, []);
 
   return (
     <>
@@ -18,9 +18,6 @@ const HallOfFame = () => {
             <span> &rsaquo; Hall of Fame</span>
           </p>
           <h1 className="page-header__title">Hall of Fame</h1>
-          <p className="page-header__desc">
-            Every LCAL champion and award winner — their legacies preserved in gold.
-          </p>
         </div>
       </div>
 

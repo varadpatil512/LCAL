@@ -1,6 +1,8 @@
 /**
  * LeaderboardTable.jsx — Full standings table
- * Points are computed here: won + drawn * 0.5
+ * Mobile (<640px): shows Rank, Player (with "Xp · Xw" sub-line), Points.
+ * Tablet (640–1023px): shows Rank, Player, Played, Won, Points.
+ * Desktop (1024px+): shows all columns.
  */
 import React from 'react';
 import './LeaderboardTable.css';
@@ -15,10 +17,10 @@ const LeaderboardTable = ({ players }) => (
         <tr>
           <th scope="col">#</th>
           <th scope="col" style={{ textAlign: 'left' }}>Player</th>
-          <th scope="col">Played</th>
-          <th scope="col">Won</th>
-          <th scope="col">Drawn</th>
-          <th scope="col">Lost</th>
+          <th scope="col" className="lb-col-played">Played</th>
+          <th scope="col" className="lb-col-won">Won</th>
+          <th scope="col" className="lb-col-drawn">Drawn</th>
+          <th scope="col" className="lb-col-lost">Lost</th>
           <th scope="col">Points</th>
         </tr>
       </thead>
@@ -34,13 +36,19 @@ const LeaderboardTable = ({ players }) => (
             <td>
               <div className="lb-player">
                 <div className="lb-avatar" aria-hidden="true">{p.player.charAt(0)}</div>
-                <span>{p.player}</span>
+                <div className="lb-player__info">
+                  <span className="lb-player__name">{p.player}</span>
+                  {/* Mobile compact stats shown via CSS on small screens */}
+                  <span className="lb-player__compact" aria-hidden="true">
+                    {p.played}p · {p.won}w
+                  </span>
+                </div>
               </div>
             </td>
-            <td>{p.played}</td>
-            <td className="lb-won">{p.won}</td>
-            <td className="lb-drawn">{p.drawn}</td>
-            <td className="lb-lost">{p.lost}</td>
+            <td className="lb-col-played">{p.played}</td>
+            <td className="lb-col-won lb-won">{p.won}</td>
+            <td className="lb-col-drawn lb-drawn">{p.drawn}</td>
+            <td className="lb-col-lost lb-lost">{p.lost}</td>
             <td className="lb-points">{p.points}</td>
           </tr>
         ))}

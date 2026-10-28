@@ -1,5 +1,5 @@
 /**
- * Footer.jsx — 4-column footer with react-router Links
+ * Footer.jsx — 4-column footer: Brand | Explore | Contact | Legal
  */
 
 import React from 'react';
@@ -21,9 +21,7 @@ const Footer = () => (
             Building the next generation of chess champions since Season 1.
           </p>
           <div className="footer__social-icons">
-            <a href="https://www.youtube.com/@spiritofaustralianimishrau4608/featured" target="_blank" rel="noopener noreferrer" className="footer__social-icon" aria-label="Instagram">📷</a>
             <a href="https://www.youtube.com/@spiritofaustralianimishrau4608/featured" target="_blank" rel="noopener noreferrer" className="footer__social-icon" aria-label="YouTube">▶</a>
-            <a href="https://www.youtube.com/@spiritofaustralianimishrau4608/featured" target="_blank" rel="noopener noreferrer" className="footer__social-icon" aria-label="Twitter / X">✕</a>
           </div>
         </div>
 
@@ -39,13 +37,11 @@ const Footer = () => (
           </ul>
         </div>
 
-        {/* About */}
+        {/* Contact */}
         <div className="footer__group">
-          <h4 className="footer__group-title">About</h4>
+          <h4 className="footer__group-title">Contact</h4>
           <ul className="footer__links">
-            <li><Link to="/constitution" className="footer__link">Constitution</Link></li>
-            <li><Link to="/jobs"         className="footer__link">Jobs</Link></li>
-            <li><a href="mailto:contact@lcal.in" className="footer__link">Contact</a></li>
+            <li><a href="mailto:contact@lcal.in" className="footer__link">contact@lcal.in</a></li>
           </ul>
         </div>
 

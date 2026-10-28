@@ -15,7 +15,7 @@ const Login = () => {
   const [errors,   setErrors]   = useState({});
   const [loading,  setLoading]  = useState(false);
 
-  useEffect(() => { document.title = 'Log In — LCAL'; }, []);
+  useEffect(() => { document.title = 'Log In | LCAL'; }, []);
 
   // Already logged in → redirect to account
   if (user) return <Navigate to="/account" replace />;

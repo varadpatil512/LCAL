@@ -30,7 +30,7 @@ const BlogPost = () => {
   const idx  = blogs.findIndex(b => b.slug === slug);
 
   useEffect(() => {
-    if (blog) document.title = `${blog.title} — LCAL`;
+    if (blog) document.title = `${blog.title} | LCAL`;
   }, [blog]);
 
   if (!blog) return <Navigate to="/blogs" replace />;

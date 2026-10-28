@@ -8,7 +8,7 @@ import { videos, YOUTUBE_STREAMS_URL } from '../data/videos';
 import './Videos.css';
 
 const Videos = () => {
-  useEffect(() => { document.title = 'Videos — LCAL'; }, []);
+  useEffect(() => { document.title = 'Videos | LCAL'; }, []);
 
   return (
     <>
@@ -19,9 +19,6 @@ const Videos = () => {
             <span> &rsaquo; Videos</span>
           </p>
           <h1 className="page-header__title">Videos</h1>
-          <p className="page-header__desc">
-            Tutorials, highlights, full matches and masterclasses from LCAL coaches and players.
-          </p>
         </div>
       </div>
 

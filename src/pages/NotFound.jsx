@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const NotFound = () => {
-  useEffect(() => { document.title = '404 Not Found — LCAL'; }, []);
+  useEffect(() => { document.title = '404 | LCAL'; }, []);
 
   return (
     <section

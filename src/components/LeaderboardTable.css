@@ -1,15 +1,15 @@
-/* LeaderboardTable.css */
+/* LeaderboardTable.css — responsive standings table */
 
 .lb-table-wrap {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden; /* No horizontal scrollbar */
   border: 1px solid var(--border);
+  width: 100%;
 }
 
 .lb-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px;
+  table-layout: auto;
 }
 
 .lb-table thead tr {
@@ -25,12 +25,12 @@
   letter-spacing: 0.15em;
   color: var(--muted);
   font-weight: 500;
-  text-align: left;
+  text-align: center;
   white-space: nowrap;
 }
 
-.lb-table th:not(:first-child):not(:nth-child(2)) {
-  text-align: center;
+.lb-table th:nth-child(2) {
+  text-align: left;
 }
 
 .lb-table tbody tr {
@@ -70,6 +70,23 @@
   gap: 12px;
 }
 
+.lb-player__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lb-player__name {
+  white-space: nowrap;
+}
+
+/* Compact mobile sub-line (hidden on desktop) */
+.lb-player__compact {
+  font-size: 0.72rem;
+  color: var(--muted);
+  display: none;
+}
+
 .lb-avatar {
   width: 32px;
   height: 32px;
@@ -84,14 +101,49 @@
   flex-shrink: 0;
 }
 
-/* Points cell */
+/* Points cell — gold & bold */
 .lb-table .lb-points {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--gold);
   font-size: 0.95rem;
 }
 
 /* Column colors */
-.lb-table .lb-won  { color: #6dbf67; }
-.lb-table .lb-drawn{ color: var(--gold); }
-.lb-table .lb-lost { color: #d45f5f; }
+.lb-table .lb-won   { color: #6dbf67; }
+.lb-table .lb-drawn { color: var(--gold); }
+.lb-table .lb-lost  { color: #d45f5f; }
+
+/* ── Tablet (640–1023px): hide Drawn and Lost ── */
+@media (max-width: 1023px) {
+  .lb-col-drawn,
+  .lb-col-lost {
+    display: none;
+  }
+}
+
+/* ── Mobile (<640px): hide Played, Won too; show compact sub-line ── */
+@media (max-width: 639px) {
+  .lb-col-played,
+  .lb-col-won {
+    display: none;
+  }
+
+  .lb-player__compact {
+    display: block;
+  }
+
+  .lb-table td,
+  .lb-table th {
+    padding: 12px 10px;
+  }
+
+  .lb-table .lb-rank {
+    width: 36px;
+  }
+
+  .lb-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+}

@@ -7,7 +7,7 @@ import BlogCard from '../components/BlogCard';
 import { blogs } from '../data/blogs';
 
 const Blogs = () => {
-  useEffect(() => { document.title = 'Blogs — LCAL'; }, []);
+  useEffect(() => { document.title = 'Blog | LCAL'; }, []);
 
   return (
     <>
@@ -18,9 +18,6 @@ const Blogs = () => {
             <span> &rsaquo; Blogs</span>
           </p>
           <h1 className="page-header__title">Blog</h1>
-          <p className="page-header__desc">
-            Coaching guides, season previews, tactical analysis, and news from the LCAL community.
-          </p>
         </div>
       </div>
 

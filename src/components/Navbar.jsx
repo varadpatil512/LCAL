@@ -1,8 +1,8 @@
 /**
- * Navbar.jsx — Router-aware navigation with hamburger, More dropdown, login state
+ * Navbar.jsx — Router-aware navigation with hamburger and login state
  */
 
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
@@ -15,17 +15,6 @@ const mainLinks = [
   { label: 'Videos',      to: '/videos' },
   { label: 'Blogs',       to: '/blogs' },
 ];
-
-const moreLinks = [
-  { label: 'Constitution', to: '/constitution' },
-  { label: 'Jobs',         to: '/jobs' },
-];
-
-const ChevronDown = () => (
-  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-    <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
 
 const Navbar = () => {
   const [scrolled, setScrolled]   = useState(false);
@@ -57,8 +46,6 @@ const Navbar = () => {
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const isMoreActive = moreLinks.some(l => location.pathname === l.to || location.pathname.startsWith(l.to + '/'));
-
   return (
     <nav
       className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}
@@ -88,32 +75,6 @@ const Navbar = () => {
               </NavLink>
             </li>
           ))}
-
-          {/* More dropdown */}
-          <li className="navbar__dropdown">
-            <button
-              className="navbar__dropdown-toggle"
-              aria-haspopup="true"
-              aria-expanded="false"
-              style={isMoreActive ? { color: 'var(--gold)' } : {}}
-            >
-              More <ChevronDown />
-            </button>
-            <div className="navbar__dropdown-menu" role="menu">
-              {moreLinks.map(link => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  className={({ isActive }) =>
-                    `navbar__dropdown-link${isActive ? ' active' : ''}`
-                  }
-                  role="menuitem"
-                >
-                  {link.label}
-                </NavLink>
-              ))}
-            </div>
-          </li>
         </ul>
 
         {/* Desktop actions */}
@@ -158,21 +119,6 @@ const Navbar = () => {
                 key={link.to}
                 to={link.to}
                 end={link.to === '/'}
-                className={({ isActive }) =>
-                  `navbar__mobile-link${isActive ? ' active' : ''}`
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-
-            <div className="navbar__mobile-divider" />
-            <span className="navbar__mobile-section-label">More</span>
-
-            {moreLinks.map(link => (
-              <NavLink
-                key={link.to}
-                to={link.to}
                 className={({ isActive }) =>
                   `navbar__mobile-link${isActive ? ' active' : ''}`
                 }

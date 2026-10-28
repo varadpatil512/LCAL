@@ -9,7 +9,7 @@ const Account = () => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
-  useEffect(() => { document.title = 'My Account — LCAL'; }, []);
+  useEffect(() => { document.title = 'My Account | LCAL'; }, []);
 
   // Route guard
   if (!user) return <Navigate to="/login" replace />;

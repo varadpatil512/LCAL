@@ -16,7 +16,7 @@ const Results = () => {
   const [round,  setRound]  = useState('All');
   const [page,   setPage]   = useState(1);
 
-  useEffect(() => { document.title = 'Results — LCAL'; }, []);
+  useEffect(() => { document.title = 'Results | LCAL'; }, []);
 
   // Reset page when filters change
   useEffect(() => { setPage(1); }, [season, round]);
@@ -41,9 +41,6 @@ const Results = () => {
             <span> &rsaquo; Results</span>
           </p>
           <h1 className="page-header__title">Results</h1>
-          <p className="page-header__desc">
-            All match results from every LCAL season. Filter by season and round.
-          </p>
         </div>
       </div>
 

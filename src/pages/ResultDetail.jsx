@@ -11,7 +11,7 @@ const ResultDetail = () => {
   const result  = results.find(r => r.id === id);
 
   useEffect(() => {
-    if (result) document.title = `${result.white} vs ${result.black} — LCAL`;
+    if (result) document.title = `${result.white} vs ${result.black} | LCAL`;
   }, [result]);
 
   if (!result) return <Navigate to="/results" replace />;

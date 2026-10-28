@@ -1,10 +1,9 @@
 /**
  * Leaderboard.jsx — Full standings with Podium, table, and season filter.
  *
- * DATA SOURCE CONFIG:
+ * DATA SOURCE CONFIG (see README for details):
  *   Local mock: default (no .env needed)
  *   Google Sheet: set VITE_SHEET_URL in .env to your published CSV URL.
- *   The component will fetch from the sheet if the env var is set.
  */
 
 import React, { useState, useEffect } from 'react';
@@ -21,16 +20,14 @@ const Leaderboard = () => {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => { document.title = 'Leaderboard — LCAL'; }, []);
+  useEffect(() => { document.title = 'Leaderboard | LCAL'; }, []);
 
   useEffect(() => {
     if (SHEET_URL) {
-      /* ── Swap: fetch from Google Sheet ── */
       setLoading(true);
       fetch(SHEET_URL)
         .then(r => r.text())
         .then(csv => {
-          // Basic CSV → object parse (replace with a proper parser for complex sheets)
           const [header, ...rows] = csv.trim().split('\n');
           const keys = header.split(',').map(k => k.trim());
           const data = rows.map(row => {
@@ -44,10 +41,9 @@ const Leaderboard = () => {
         .catch(() => setPlayers(getSortedLeaderboard(leaderboardData)))
         .finally(() => setLoading(false));
     } else {
-      /* ── Default: mock data ── */
       setPlayers(getSortedLeaderboard(leaderboardData));
     }
-  }, [season]); // re-run when season changes (for real API calls)
+  }, [season]);
 
   const top3 = players.slice(0, 3);
 
@@ -61,9 +57,6 @@ const Leaderboard = () => {
             <span> &rsaquo; Leaderboard</span>
           </p>
           <h1 className="page-header__title">Leaderboard</h1>
-          <p className="page-header__desc">
-            Season standings. Points = Wins + 0.5 × Draws.
-          </p>
         </div>
       </div>
 
@@ -97,14 +90,6 @@ const Leaderboard = () => {
               {/* Full table */}
               <p className="lb-full-standings-title">Full Standings</p>
               <LeaderboardTable players={players} />
-
-              {/* Data source note */}
-              <p className="lb-data-source-note">
-                {SHEET_URL
-                  ? <>Data sourced from <a href={SHEET_URL} target="_blank" rel="noopener noreferrer">Google Sheet ↗</a></>
-                  : 'Data: season mock data — replace with API or Google Sheet via VITE_SHEET_URL env var.'
-                }
-              </p>
             </>
           )}
         </div>

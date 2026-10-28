@@ -18,8 +18,6 @@ const HallOfFame   = lazy(() => import('./pages/HallOfFame'));
 const Videos       = lazy(() => import('./pages/Videos'));
 const Blogs        = lazy(() => import('./pages/Blogs'));
 const BlogPost     = lazy(() => import('./pages/BlogPost'));
-const Constitution = lazy(() => import('./pages/Constitution'));
-const Jobs         = lazy(() => import('./pages/Jobs'));
 const Legal        = lazy(() => import('./pages/Legal'));
 const Login        = lazy(() => import('./pages/Login'));
 const Account      = lazy(() => import('./pages/Account'));
@@ -56,8 +54,6 @@ function App() {
             <Route path="videos"      element={<Videos />} />
             <Route path="blogs"       element={<Blogs />} />
             <Route path="blogs/:slug" element={<BlogPost />} />
-            <Route path="constitution"element={<Constitution />} />
-            <Route path="jobs"        element={<Jobs />} />
             <Route path="legal"       element={<Legal />} />
             <Route path="login"       element={<Login />} />
             <Route path="account"     element={<Account />} />

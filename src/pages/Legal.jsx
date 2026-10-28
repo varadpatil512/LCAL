@@ -16,7 +16,7 @@ const TERMS = [
 ];
 
 const Legal = () => {
-  useEffect(() => { document.title = 'Legal — LCAL'; }, []);
+  useEffect(() => { document.title = 'Legal | LCAL'; }, []);
 
   return (
     <>
@@ -27,7 +27,6 @@ const Legal = () => {
             <span> &rsaquo; Legal</span>
           </p>
           <h1 className="page-header__title">Legal</h1>
-          <p className="page-header__desc">Terms & Conditions and Privacy Policy for LCAL.</p>
         </div>
       </div>
 
